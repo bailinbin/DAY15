@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                名称<td><input id="Text1" value="管理权限" type="text" /></td>
+            </tr>
+            <tr>
+                <td><select id="Select1">
+    <option>组织机构</option>
+
+</select></td>
+            </tr>
+            <tr>
+                <td><input id="Button1" type="button" onclick="Bao()" value="保存" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    function Bao() {
+        $.ajax({
+            url: "/Work/Add",
+            type: "post",
+            success:
+                function (d) {
+                    if (d > 0) {
+                        alert('保存成功');
+                    }
+                }
+        })
+    }
+</script>
